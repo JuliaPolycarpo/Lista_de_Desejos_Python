@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form class="mt-3" method="post">
+    <!-- Título -->
+    <div class="mb-3">
+        <label for="titulo_desejo" class="form-label">Título</label>
+        <input type="text" class="form-control" name="titulo_desejo" id="titulo_desejo"
+               value="{{ desejo_selecionado.titulo_desejo if desejo_selecionado else '' }}" required>
+    </div>
+
+    <!-- Tipo -->
+    <div class="mb-3">
+        <label for="tipo_desejo" class="form-label">Tipo</label>
+        <select name="tipo_desejo" id="tipo_desejo" class="form-select" required>
+            <option value="" disabled {% if not desejo_selecionado %}selected{% endif %}>Escolha o tipo</option>
+            <option value="Filme" {% if desejo_selecionado and desejo_selecionado.tipo_desejo =='Filme' %}selected{% endif %}>Filme</option>
+            <option value="Série" {% if desejo_selecionado and desejo_selecionado.tipo_desejo == 'Série' %}selected{% endif %}>Série</option>
+            <option value="Livro" {% if desejo_selecionado and desejo_selecionado.tipo_desejo == 'Livro' %}selected{% endif %}>Livro</option>
+            <option value="Jogo" {% if desejo_selecionado and desejo_selecionado.tipo_desejo == 'Jogo' %}selected{% endif %}>Jogo</option>
+        </select>
+    </div>
+
+    <!-- Botões -->
+    <button type="submit">Salvar</button>
+    {% if desejo_selecionado %}
+        <a href="{{ url_for('lista') }}">Voltar</a>
+    {% endif %}
+</form>
+
+<h2>Lista de Desejos</h2>
+
+{% if desejos %}
+    <ul>
+        {% for desejo in desejos %}
+            <li>
+                {{ desejo.titulo_desejo }} - {{ desejo.tipo_desejo }}
+                <a href="{{ url_for('update', idDesejo=desejo.id_desejo) }}">Editar</a>
+                <a href="{{ url_for('delete', idDesejo=desejo.id_desejo) }}">Apagar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum desejo cadastrado</p>
+{% endif %}
+
+{% endblock %}
