@@ -14,7 +14,8 @@ def init_db(db_name: str = DB_PATH) -> None:
          CREATE TABLE IF NOT EXISTS desejos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo_desejo TEXT NOT NULL,
-             tipo_desejo TEXT);
+            tipo_desejo TEXT,
+            indicado_por TEXT);
         ''')
 
 class Database:
@@ -22,7 +23,7 @@ class Database:
     def __init__(self, db_name: str = DB_PATH) -> None:
         self.connection: Connection = connect(db_name)
         self.cursor = self.connection.cursor()
-
+        
     def executar(self, query: str, params: tuple = ()) -> Cursor:
         self.cursor.execute(query, params)
         self.connection.commit()
@@ -49,3 +50,5 @@ class Database:
             print ('Traceback completo:')
             traceback.print_tb(tb)
         self.close()
+
+print("BANCO USADO:", DB_PATH)
