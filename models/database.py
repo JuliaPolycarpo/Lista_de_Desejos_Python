@@ -15,7 +15,8 @@ def init_db(db_name: str = DB_PATH) -> None:
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo_desejo TEXT NOT NULL,
             tipo_desejo TEXT,
-            indicado_por TEXT);
+            indicado_por TEXT,
+            imagem TEXT );
         ''')
 
 class Database:

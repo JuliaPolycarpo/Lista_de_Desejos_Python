@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form class="mt-3" method="post">
+<form class="mt-3" method="post" enctype="multipart/form-data"> <!--Enctype é necessário para o flask receber as imagens -->
     <!-- Desejo -->
     <div class="mb-3">
         <label for="titulo_desejo" class="form-label">Título</label>
@@ -26,8 +26,14 @@
     <div class="mb-3">
         <label for="indicado_por" class="form-label">Indicado Por</label>
         <input type="text" class="form-control" name="indicado_por" id="indicado_por"
-               value="{{ desejo_selecionado.indicado_por if desejo_selecionado else '' }}">
+               value="{{ desejo_selecionado.indicado_por if desejo_selecionado else '' }}"> <!---Tirei o "Required" para que o campo seja opcional e não obrigatorio"-->
     </div>
+
+    <!-- Imagem -->
+<div class="mb-3">
+    <label for="imagem" class="form-label">Imagem</label>
+    <input type="file" class="form-control" name="imagem" id="imagem">
+</div>
 
     <!-- Botões -->
     <button class="button">Salvar</button>
