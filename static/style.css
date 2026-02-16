@@ -1,0 +1,125 @@
+/* ===== Home ===== */
+
+.home-body {
+    margin: 0;
+    height: 900px;
+    background: rgb(173, 14, 178); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.circulo-laranja {
+    width: 420px;
+    height: 420px;
+    background: rgb(255, 140, 0); 
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.circulo-laranja h1 {
+    margin: 0 0 15px 0;
+    color: rgb(60, 1, 76);
+    font-size: 30px;
+}
+
+.circulo-laranja p {
+    margin-bottom: 20px;
+    color: rgb(60, 1, 76);
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.circulo-laranja a {
+    background: white;
+    color: rgb(60, 1, 76);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.circulo-laranja a:hover {
+    background:rgb(60, 1, 76);
+    color: white;
+}
+
+/* ===== Body ===== */
+body {
+    margin: 0;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background:rgb(60, 1, 76);
+    /*===rgb(173, 14, 178);====*/
+    color: white;
+    padding: 40px;
+   
+}
+
+input,
+select {
+    background-color: transparent; /* mesma cor do box */
+    border: 2px solid rgb(60, 1, 76); 
+    color:black; 
+    padding: 3px 150px;
+    border-radius: 6px;
+}
+
+h2 {
+    color: rgb(253, 139, 0); 
+    margin-bottom: 30px;
+}
+
+.mb-3 {
+    background: rgb(254, 164, 53);
+    padding: 25px;  
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    color: rgb(173, 14, 178); 
+    font-weight: bold;
+}
+
+/* Botão salvar */
+.button {
+    background: white;
+    color: rgb(173, 14, 178);
+    border: 2.5px solid rgb(255, 140, 0);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: rgb(60, 1, 76); 
+    color: white;
+}
+
+a {
+    color: rgb(255, 140, 0); 
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+a:visited {
+    color: rgb(185, 29, 190); 
+    text-decoration: none;
+}

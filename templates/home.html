@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>Ideias guardadas hoje, histórias vividas amanhã.</p>
-    <button><a href="/lista">Lista de Desejos</a></button>
+<div class="home-body"> <!-- Adicionei as divs para poder estilizar o home do jeito que eu queria -->   
+    <div class="circulo-laranja"> 
+        <h1>Must Watch List</h1>
+        <p>Ideias guardadas hoje, histórias vividas amanhã.</p>
+        <a href="{{ url_for('lista') }}">Entrar</a>
+    </div>
+</div>
+
 {% endblock %}

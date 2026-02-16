@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, request, url_for
 from models.database import init_db
 from models.desejos import Desejo
 
-app = Flask(__name__)
+app = Flask(__name__) 
 init_db()
 
 
@@ -43,4 +43,3 @@ def update(idDesejo):
     desejos = Desejo.obter_desejos()
     desejo_selecionado = Desejo.id(idDesejo)
     return render_template('lista.html', titulo=f'Editando o desejo ID: {idDesejo}', desejos=desejos, desejo_selecionado=desejo_selecionado)
-
