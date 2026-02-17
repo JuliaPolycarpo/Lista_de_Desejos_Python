@@ -7,8 +7,8 @@ from werkzeug.utils import secure_filename #importação necessária para salvar
 app = Flask(__name__) 
 init_db()
 
-# faço isso para habilitar o salvamento de imagens na pasta static/imagens
-UPLOAD_FOLDER = "static/imagens"
+# faço isso para habilitar o salvamento de imagens na pasta static/images
+UPLOAD_FOLDER = "static/images"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 

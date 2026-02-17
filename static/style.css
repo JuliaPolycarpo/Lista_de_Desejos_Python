@@ -2,6 +2,7 @@
 
 .home-body {
     margin: 0;
+    width: 100%;
     height: 900px;
     background: rgb(173, 14, 178); 
     display: flex;
@@ -39,7 +40,7 @@
 
 .circulo-laranja a {
     background: white;
-    color: rgb(60, 1, 76);
+    color: rgb(60, 1, 76) !important; /* força a cor do link para ser roxo, mesmo após ser visitado */
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: bold;
@@ -54,22 +55,35 @@
 /* ===== Body ===== */
 body {
     margin: 0;
-    align-items: center;
     font-family: Arial, sans-serif;
     background:rgb(60, 1, 76);
     /*===rgb(173, 14, 178);====*/
     color: white;
-    padding: 40px;
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.container-lista{
+    width: 400px;
+    margin-top: 60px;
 }
 
 input,
 select {
-    background-color: transparent; /* mesma cor do box */
+    width: 100%;
+    background: transparent; /* mesma cor do box */
     border: 2px solid rgb(60, 1, 76); 
     color:black; 
-    padding: 3px 150px;
-    border-radius: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box; /* garante que o padding e a borda sejam incluídos na largura total */
+}
+
+input:focus,
+select:focus {
+    border: 2px solid rgb(173, 14, 178);
 }
 
 h2 {
@@ -79,14 +93,60 @@ h2 {
 
 .mb-3 {
     background: rgb(254, 164, 53);
-    padding: 25px;  
-    border-radius: 15px;
-    margin-bottom: 10px;
+    padding: 20px;  
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .form-label {
     color: rgb(173, 14, 178); 
     font-weight: bold;
+}
+
+/* Lista de desejos */
+/*Eu quis deixar cada desejo em um unico box, como se estivesse vendo um catalogo da netflix*/
+.lista-desejos{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;   
+}
+
+.box-desejo {
+    background: rgb(173, 14, 178); ;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.box-desejo:hover {
+    transform: scale(1.03);
+}
+
+.box-desejo img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.card-conteudo h3 {
+    margin: 10px 0 5px 0;
+}
+
+.card-conteudo p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.editar-apagar {
+    background: rgb(254, 164, 53);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Botão salvar */
@@ -99,27 +159,29 @@ h2 {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+
 }
 
 .button:hover {
     background: rgb(60, 1, 76); 
     color: white;
+    transform: scale(1.03);
 }
 
 a {
-    color: rgb(255, 140, 0); 
+    color: rgb(185, 29, 190); 
     font-weight: bold;
     transition: 0.3s;
     text-decoration: none;
 }
 
 a:hover {
-    color: white;
+    color: rgb(255, 140, 0);
     text-decoration: none;
 }
 
 
 a:visited {
-    color: rgb(185, 29, 190); 
+    color: white; 
     text-decoration: none;
 }

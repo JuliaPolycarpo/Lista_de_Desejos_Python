@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form class="mt-3" method="post" enctype="multipart/form-data"> <!--Enctype é necessário para o flask receber as imagens -->
+<form class="container-lista" method="post" enctype="multipart/form-data"> <!--Enctype é necessário para o flask receber as imagens -->
     <!-- Desejo -->
     <div class="mb-3">
         <label for="titulo_desejo" class="form-label">Título</label>
@@ -46,17 +46,25 @@
 
 {% if desejos %}
     <ul>
+<div class="lista-desejos">
         {% for desejo in desejos %}
-         <li>
-            {{ desejo.titulo_desejo }} - {{ desejo.tipo_desejo }}
-              
-            {% if desejo.indicado_por %}
-                (Indicado por: {{ desejo.indicado_por }})
-            {% endif %}
-
+            <div class="box-desejo">
+                {% if desejo.imagem %}
+                    <img src="{{ url_for('static', filename='images/' + desejo.imagem) }}" alt="Imagem do desejo">
+                {% endif %}               
+         
+            <div class="card-conteudo">
+                <h3>{{ desejo.titulo_desejo }}</h3>
+                <p>{{ desejo.tipo_desejo }}</p>
+                {% if desejo.indicado_por %}
+                    <p>Indicado por: {{ desejo.indicado_por }}</p>
+                {% endif %}
+            </div>
+            <div class="editar-apagar">
             <a href="{{ url_for('update', idDesejo=desejo.id_desejo) }}">Editar</a>
             <a href="{{ url_for('delete', idDesejo=desejo.id_desejo) }}">Apagar</a>
-        </li>
+             </div>
+ </div>
         {% endfor %}
     </ul>
 {% else %}
