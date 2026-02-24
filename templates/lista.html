@@ -14,7 +14,7 @@
     <div class="mb-3">
         <label for="tipo_desejo" class="form-label">Tipo</label>
         <select name="tipo_desejo" id="tipo_desejo" class="form-select" required>
-            <option value="" disabled {% if not desejo_selecionado %}selected{% endif %}>Escolha o tipo</option>
+            <option value="" disabled {% if not desejo_selecionado %}selected{% endif %}></option>
             <option value="Filme" {% if desejo_selecionado and desejo_selecionado.tipo_desejo =='Filme' %}selected{% endif %}>Filme</option>
             <option value="Série" {% if desejo_selecionado and desejo_selecionado.tipo_desejo == 'Série' %}selected{% endif %}>Série</option>
             <option value="Livro" {% if desejo_selecionado and desejo_selecionado.tipo_desejo == 'Livro' %}selected{% endif %}>Livro</option>
@@ -33,6 +33,7 @@
 <div class="mb-3">
     <label for="imagem" class="form-label">Imagem</label>
     <input type="file" class="form-control" name="imagem" id="imagem">
+     <!--Type: campo para selecionar arquivos do pc-->
 </div>
 
     <!-- Botões -->

@@ -1,16 +1,17 @@
-# Banco de dados
-data/*.db
-
 # Ambiente virtual
 venv/
-.env
+.env/
 
-# Cache Python
+# Arquivos Python compilados
 __pycache__/
 *.pyc
 
-# Variáveis de ambiente
-.env
+# Banco de dados
+*.db
+*.sqlite3
 
-# Arquivos do VSCode
-.vscode/
+# Uploads de imagens
+static/images/
+
+# Arquivos de configuração sensíveis
+.env

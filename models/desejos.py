@@ -25,8 +25,8 @@ class Desejo:
            #Para parar de dar erro no desempacotamento ([[titulo, tipo]] = resultado), fiz isso aqui:
             if not resultado:
                 return None
+            
             titulo, tipo, indicado_por, imagem = resultado[0] #precisa disso para desempacotar a lista de resultados que é uma tupla (titulo, tipo, indicado_por, imagem)
-
         return cls(titulo_desejo=titulo, tipo_desejo=tipo, indicado_por=indicado_por, imagem=imagem, id_desejo=id)
 
     def salvar_desejo(self: Self) -> None:

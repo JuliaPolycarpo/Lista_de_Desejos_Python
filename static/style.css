@@ -1,4 +1,4 @@
-/* ===== Home ===== */
+/*  Home */
 
 .home-body {
     margin: 0;
@@ -40,7 +40,7 @@
 
 .circulo-laranja a {
     background: white;
-    color: rgb(60, 1, 76) !important; /* força a cor do link para ser roxo, mesmo após ser visitado */
+    color: rgb(60, 1, 76) !important;  /* força a cor do link para ser roxo, mesmo após ser visitado */
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: bold;
@@ -52,7 +52,7 @@
     color: white;
 }
 
-/* ===== Body ===== */
+/*  Body  */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
